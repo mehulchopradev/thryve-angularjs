@@ -1,0 +1,42 @@
+<div ng-controller="libraryCtrl">
+    <div class="search">
+        <input type="text" placeholder="Enter title to search" ng-model="searchTerm.title">
+    </div>
+    <div class="booklist">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th ng-click="onSort('title')">Title</th>
+                    <th ng-click="onSort('price')">Price</th>
+                    <th ng-click="onSort('pages')">Pages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in bookList | filter:searchTerm | orderBy: orderColumn">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.price }}</td>
+                    <td>{{ book.pages }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bookeditor">
+        <div class="action">
+            <button ng-click="startEditing()">Add Book</button>
+        </div>
+        <div class="form" ng-show="editForm">
+            <p>
+                <input type="text" placeholder="Title" ng-model="newBook.title">
+            </p>
+            <p>
+                <input type="number" placeholder="Pages" ng-model="newBook.pages">
+            </p>
+            <p>
+                <input type="number" placeholder="Price" ng-model="newBook.price">
+            </p>
+            <p>
+                <button ng-click="save()">Save</button>
+            </p>
+        </div>
+    </div>
+</div>

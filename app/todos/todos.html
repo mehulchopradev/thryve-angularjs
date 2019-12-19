@@ -1,0 +1,16 @@
+<div ng-controller="todosCtrl">
+  <div class="editor">
+    <input type="text" placeholder="Write ur todo" ng-model="newTodo">
+    <button ng-click="save()" ng-disabled="!newTodo">Save</button>
+  </div>
+  <div class="todolist">
+    <div ng-repeat="obj in todoList">
+      <input type="checkbox" ng-model="obj.done">{{ obj.description | title }}
+        ({{ obj.date | date: "dd-MM-yyyy"}})
+    </div>
+  </div>
+  <div class="todosfooter">
+    <button ng-click="clearCompleted()" ng-disabled="disableClearBtn()">Clear Completed</button>
+  </div>
+  <hello></hello>
+</div>

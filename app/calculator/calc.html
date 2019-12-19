@@ -1,0 +1,23 @@
+<div ng-controller="calculatorCtrl">
+    <div>
+        <input type="text" placeholder="Enter 1st No" ng-model="first">
+        <my-select items="operations" ops="ops"></my-select>
+        <!-- <select ng-model="ops">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+        </select> -->
+        <input type="text" placeholder="Enter 2nd No" ng-model="second">
+    </div>
+    <div>
+        <input type="button"
+            value="Calculate"
+            ng-click="calculate()"
+            ng-disabled="shouldDisable()">
+    </div>
+    <div>
+        <input type="text" ng-model="ans">
+    </div>
+    <calc-results first="first" second="second" ans="ans"></calc-results>
+    <hello></hello>
+</div>

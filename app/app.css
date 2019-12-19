@@ -1,0 +1,31 @@
+/* app css stylesheet */
+
+div {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+select {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 634px;
+}
+
+.menu {
+  padding: 10px;
+}
+
+.menu > a {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+.booklist > table {
+  margin: auto;
+}
